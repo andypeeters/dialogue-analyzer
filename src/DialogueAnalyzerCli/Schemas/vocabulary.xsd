@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- Main list element -->
+    <xs:element name="vocablist">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="version" type="xs:unsignedInt"/>
+                <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- TODO: this must be revised, using attributes instead of elements. -->
+                            <xs:element name="term" type="xs:string"/>
+                            <xs:element name="ruby" type="xs:string" minOccurs="0"/>
+                            <xs:element name="roman" type="xs:string" minOccurs="0"/>
+                            <!-- TODO: multiple translations must be possible. -->
+                            <xs:element name="translations">
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
